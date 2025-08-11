@@ -1,0 +1,232 @@
+<!-- public/sell.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sell Item — DormDeals</title>
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Minimal page CSS -->
+  <style>
+    html, body { height: 100%; }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    main { flex: 1; }
+    #imagePreview { max-width: 280px; display:block; margin-top:10px; border-radius:6px; }
+    .category-label { cursor: pointer; user-select: none; margin-right: 12px; }
+    .category-label input { margin-right: 6px; }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR (injected by main.js) -->
+  <div id="navbar-container"></div>
+
+  <main class="container py-5" style="max-width:720px;">
+    <h1 class="h4 mb-4">Sell / Donate</h1>
+
+    <form id="sellForm" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label class="form-label">Product Name</label>
+        <input id="pname" name="pname" class="form-control" required />
+        <div class="invalid-feedback">Please enter a product name.</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Price (₹)</label>
+        <input id="pprice" name="pprice" type="number" min="0" class="form-control" required />
+        <div class="invalid-feedback">Please enter a valid price.</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Product Info</label>
+        <input id="pdetail" name="pdetail" type="text" class="form-control" placeholder="Product Description" />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Date Bought</label>
+        <input id="pdate" name="pdate" type="date" class="form-control" />
+      </div>
+
+      <!-- Category radio buttons -->
+      <div class="mb-3">
+        <label class="form-label d-block">Category</label>
+        <div class="d-flex flex-wrap align-items-center">
+          <label class="category-label">
+            <input type="radio" name="pcat" value="cycle" /> Cycle
+          </label>
+          <label class="category-label">
+            <input type="radio" name="pcat" value="drafter" /> Drafter
+          </label>
+          <label class="category-label">
+            <input type="radio" name="pcat" value="chair" /> Chair
+          </label>
+          <label class="category-label">
+            <input type="radio" name="pcat" value="coat" /> Coat
+          </label>
+          <label class="category-label">
+            <input type="radio" name="pcat" value="other" id="otherCategoryRadio" /> Other
+          </label>
+        </div>
+        <!-- Hidden input for custom category -->
+        <input 
+          type="text" 
+          id="otherCategoryInput" 
+          class="form-control mt-2" 
+          placeholder="Enter other category" 
+          style="display:none;" 
+        />
+      </div>
+
+      <!-- Image upload -->
+      <div class="mb-3">
+        <label class="form-label">Product Image</label>
+        <input type="file" id="pimage" accept="image/*" class="form-control" />
+        <img id="imagePreview" src="" alt="Image preview" style="display:none;" />
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success">Post Listing</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- FOOTER (injected by main.js) -->
+  <div id="footer-container"></div>
+
+  <!-- Bootstrap JS then main.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <script>
+    // Render navbar & footer
+    renderNav();
+
+    // Ensure page requires auth
+    if (!requireAuthOrRedirect()) {
+      throw new Error('Redirecting to login');
+    }
+
+    let userId = "";
+    let imageBase64 = "";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      try {
+        const tokenData = JSON.parse(localStorage.getItem("auth")) || null;
+        if (!tokenData || !tokenData.user?.id) {
+          window.location.href = "login.html";
+          return;
+        }
+        // Extract user ID
+        userId = tokenData.user.id;
+        console.log("User ID:", userId);
+      } catch (err) {
+        console.error("Error parsing auth token:", err);
+        window.location.href = "login.html";
+      }
+    });
+
+    // Show/hide "Other" category input
+    document.querySelectorAll('input[name="pcat"]').forEach(radio => {
+      radio.addEventListener("change", () => {
+        const otherInput = document.getElementById("otherCategoryInput");
+        if (document.getElementById("otherCategoryRadio").checked) {
+          otherInput.style.display = "block";
+          otherInput.focus();
+        } else {
+          otherInput.style.display = "none";
+          otherInput.value = "";
+        }
+      });
+    });
+
+    // Client-side validation bootstrap style
+    (function () {
+      'use strict';
+      const form = document.getElementById('sellForm');
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return;
+        }
+        await submitSell();
+      }, false);
+    })();
+
+    // Image upload preview & Base64
+    document.getElementById("pimage").addEventListener("change", function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        imageBase64 = evt.target.result;
+        const preview = document.getElementById("imagePreview");
+        if (preview) {
+          preview.src = imageBase64;
+          preview.style.display = "block";
+        }
+      };
+      reader.onerror = function(err) {
+        console.error("Image read error", err);
+      };
+      reader.readAsDataURL(file);
+    });
+
+    async function submitSell() {
+      if (!userId) {
+        alert("User info not loaded yet. Please wait or log in again.");
+        return;
+      }
+
+      const pname = document.getElementById("pname").value.trim();
+      const pprice = Number(document.getElementById("pprice").value);
+      const pdetail = document.getElementById("pdetail").value.trim();
+      const pdate = document.getElementById("pdate").value || "";
+      let pcat = document.querySelector('input[name="pcat"]:checked')?.value || "";
+      const pimage = imageBase64 || "";
+
+      if (pcat === "other") {
+        const customCat = document.getElementById("otherCategoryInput").value.trim();
+        if (!customCat) {
+          alert("Please enter your category name.");
+          return;
+        }
+        pcat = customCat;
+      }
+
+      if (!pcat) {
+        alert("Please select a category.");
+        return;
+      }
+      if (!pdate) {
+        alert("Please select the purchase date.");
+        return;
+      }
+
+      const pdata = {
+        pname,
+        pprice,
+        pdetail,
+        pdate,
+        pcat,
+        pimage,
+        id: userId
+      };
+
+      try {
+        await doSell(pdata);
+        alert("Posted successfully!");
+        window.location.href = "index.html";
+      } catch (err) {
+        console.error("Sell error:", err);
+        alert(err?.message || err || "Failed to post listing.");
+      }
+    }
+  </script>
+</body>
+</html>

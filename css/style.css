@@ -1,0 +1,234 @@
+:root{
+    --brand: #0d6efd; /* bootstrap primary by default */
+    --muted: #6c757d;
+    --bg: #ffffff;
+    --card-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  }
+  
+  body{
+
+    background: var(--bg);
+    color: #111827;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .hero {
+    background: linear-gradient(90deg, rgba(13,110,253,0.05), rgba(13,110,253,0.02));
+    border-bottom: 1px solid #eef2ff;
+  }
+  
+  .visually-hidden-focusable{
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .visually-hidden-focusable:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    background: #fff;
+    padding: .5rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  
+  /* central stylesheet rule: all custom styles here -- keep small and semantic */
+  .btn-outline-primary {
+    border-width: 1.5px;
+  }
+  html, body {
+    height: 100%;
+  }
+  
+  main {
+    flex: 1;
+  }
+  
+  /* Dark mode variable overrides */
+body.dark-theme {
+  --brand: #66aaff; /* a lighter blue for dark mode */
+  --muted: #a0a0a0;
+  --bg: #121212;
+  --card-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+  
+  background: var(--bg);
+  color: #e0e0e0;
+  
+}
+
+/* Adjustments for some elements in dark mode */
+
+body.dark-theme .hero {
+  background: linear-gradient(90deg, rgba(102, 170, 255, 0.1), rgba(102, 170, 255, 0.05));
+  border-bottom: 1px solid #333;
+  text-decoration: none;
+}
+
+body.dark-theme .btn-outline-primary {
+  border-color: var(--brand);
+  color: var(--brand);
+  text-decoration: none;
+}
+
+body.dark-theme .btn-outline-primary:hover {
+  background-color: var(--brand);
+  color: #121212;
+  text-decoration: none;
+}
+
+/* Navbar override example */
+body.dark-theme .navbar {
+  background-color: #1e1e1e !important;
+  border-color: #333 !important;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+body.dark-theme .navbar a,
+body.dark-theme .navbar .nav-link {
+  color: var(--muted) !important;
+  text-decoration: none;
+}
+
+/* Shadows for cards or elements using var */
+body.dark-theme .card {
+  box-shadow: var(--card-shadow);
+  background-color: #222;
+  color: #e0e0e0;
+}
+/* Light mode inputs (optional, if you want to explicitly style) */
+input, textarea, select {
+  background-color: #fff;
+  color: #111827;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode inputs */
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+  color: #888;
+}
+
+/* For better focus outline in dark */
+body.dark-theme input:focus,
+body.dark-theme textarea:focus,
+body.dark-theme select:focus {
+  outline: 2px solid var(--brand);
+  background-color: #333;
+  color: #fff;
+}
+
+/* Default (light) footer styles */
+footer {
+  background-color: #f8f9fa; /* similar to bg-light */
+  color: #6c757d; /* muted */
+  border-top: 1px solid #dee2e6;
+}
+
+footer a {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #0d6efd; /* bootstrap primary */
+  text-decoration: underline;
+}
+
+/* Dark mode footer */
+body.dark-theme footer {
+  background-color: #1e1e1e;
+  color: #bbb;
+  border-top: 1px solid #333;
+}
+
+body.dark-theme footer a {
+  color: #66aaff;
+}
+
+body.dark-theme footer a:hover {
+  color: #a0cfff;
+  text-decoration: underline;
+}
+/* Default list style */
+ul, ol {
+  color: #111827; /* your normal text color */
+}
+
+/* Dark mode list items */
+body.dark-theme ul,
+body.dark-theme ol {
+  color: #ddd;
+  background-color: #1e1e1e;
+}
+
+body.dark-theme ul li,
+body.dark-theme ol li {
+  color: #ddd;
+
+  background-color: #1e1e1e;
+}
+
+/* If list links inside, style them too */
+body.dark-theme ul li a,
+body.dark-theme ol li a {
+  color: #66aaff;
+  text-decoration: none;
+  /* background-color: #1e1e1e; */
+}
+
+body.dark-theme ul li a:hover,
+body.dark-theme ol li a:hover {
+  text-decoration: underline;
+  color: #a0cfff;
+  /* background-color: #1e1e1e; */
+}
+/* Dark mode list-group-item */
+body.dark-theme .list-group-item {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border-color: #444 !important;
+}
+
+/* Dark mode btn-outline-primary */
+body.dark-theme .btn-outline-primary {
+  color: var(--brand);
+  border-color: var(--brand);
+  background-color: transparent;
+}
+
+body.dark-theme .btn-outline-primary:hover {
+  background-color: var(--brand);
+  color: #121212;
+}
+
+/* Dark mode btn-danger (red buttons) */
+body.dark-theme .btn-danger {
+  background-color: #b94a48;
+  border-color: #b94a48;
+  color: #fff;
+}
+
+body.dark-theme .btn-danger:hover {
+  background-color: #942f2f;
+  border-color: #942f2f;
+  color: #fff;
+}
+

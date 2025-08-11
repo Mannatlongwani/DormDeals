@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us — DormDeals</title>
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+  </header>
+
+  <main class="container py-5" style="max-width: 800px;">
+    <h1 class="h4 mb-4">About DormDeals</h1>
+
+    <p class="lead">
+      <i class="bi bi-bag-heart text-primary"></i> DormDeals is your campus marketplace —
+      built by students, for students.
+    </p>
+
+    <section class="mb-5">
+      <h2 class="h5"><i class="bi bi-lightbulb me-2 text-warning"></i> Our Mission</h2>
+      <p>
+        To make buying and selling pre-loved items on campus as easy and safe as possible.
+        From textbooks to furniture to gadgets — we help students save money, earn extra cash, and reduce waste.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="h5"><i class="bi bi-shield-check me-2 text-success"></i> Safety First</h2>
+      <p>
+        We encourage users to meet in public, bring a friend, and verify items before exchanging.
+        Our platform will soon feature a built-in reporting system to keep the community safe.
+      </p>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="h5"><i class="bi bi-rocket-takeoff me-2 text-info"></i> How We Started</h2>
+      <p>
+        DormDeals started as a small project to solve a simple problem — where do students buy or sell stuff without
+        dealing with random strangers from the internet? Now it’s a growing student-to-student marketplace.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="h5"><i class="bi bi-envelope-paper-heart me-2 text-danger"></i> Contact Us</h2>
+      <p>
+        Have feedback, questions, or ideas? Drop us a line at
+        <a href="mailto:support@dormdeals.com">support@dormdeals.com</a>.
+      </p>
+    </section>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+    <script src="js/main.js"></script>
+    <script>
+      renderNav();
+    </script>
+</body>
+</html>
