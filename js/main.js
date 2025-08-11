@@ -1,6 +1,6 @@
 // public/js/main.js
 // ----- CONFIG -----
-const API_BASE = "http://localhost:3001/api"; // change to your backend host/port if different
+const API_BASE = "https://dormdeals-m89o.onrender.com/api"; 
 
 // ----- AUTH STORAGE HELPERS -----
 function getAuth() {
