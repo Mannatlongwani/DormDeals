@@ -1,0 +1,4 @@
+Contact: mailto:karthikbhukya2006@gmail.com
+Expires: 2025-12-31T23:59:00.000Z
+Preferred-Languages: en
+Canonical: https://dorm-deals-eight.vercel.app//security.txt
