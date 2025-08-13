@@ -8,7 +8,71 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="icon" href="/assets/favicon.ico" />
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        margin: 20px;
+        line-height: 1.4;
+    }
+    .container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .column {
+        flex: 1;
+        min-width: 400px;
+    }
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+    h2 {
+        margin-top: 20px;
+        color: #1a5276;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 3px;
+        font-size: 1.05em;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        background: #fff;
+        margin-bottom: 4px;
+        padding: 5px 8px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        font-size: 0.9em;
+    }
+    li:nth-child(even) {
+        background: #f1f4f8;
+    }
+    .task-text {
+        display: block;
+    }
+    .status-dropdown {
+        margin-top: 2px;
+    }
+    select {
+        padding: 2px 4px;
+        font-size: 0.85em;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background-color: white;
+        cursor: pointer;
+        min-width: 120px;
+    }
+    select:focus {
+        outline: 2px solid #007acc;
+        border-color: #007acc;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -197,8 +261,6 @@
     <li>Emotional comfort</li>
   </ul>
     </div>
-    <!-- END: Added Design Rationale Text -->
-
     <div class="alert alert-warning">
       <i class="bi bi-exclamation-triangle"></i> This page is not linked from anywhere on the site.
       Only instructors with the direct link should be able to access it.
@@ -218,6 +280,417 @@
         <!-- JS injects cards here -->
       </div>
     </section>
+
+    <h1>WBD Project Requirements</h1>
+
+<div class="container">
+    <div class="column">
+        <h2>📋 Project Setup & Documentation</h2>
+        <ul>
+            <li><span class="task-text"><strong>Table with team number, member names, roll numbers</strong></span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Stakeholders listed</strong></span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Submission</strong>: Complete & submit before deadline</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+
+        <h2>🏗️ Core Technical Requirements</h2>
+        <ul>
+            <li><span class="task-text"><strong>Stack</strong>: Use HTML, CSS, JavaScript</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Page Count</strong>: 5–6 main pages</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Semantic HTML</strong>: Use &lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, etc.</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Central CSS</strong>: Single global stylesheet</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Framework Use</strong>: Bootstrap (or approved alternative)</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Accessible Forms & Validation</strong></span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+
+        <h2>🔒 Security & Configuration Files</h2>
+        <ul>
+            <li><span class="task-text"><strong>Security.txt</strong>: At site root</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Robots.txt</strong>: At site root</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>HTTPS (SSL)</strong>: Serve site securely</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+        <h2>🔐 Hidden/Instructors-only Page</h2>
+        <ul>
+            <li><span class="task-text"><strong>Access Restriction</strong>: Instructor only</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Handwritten HTML</strong>: No auto-generation</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Team Table</strong>: Members & roles listed</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Testimonial</strong>: Added</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Consumer Profile</strong>: Who are you catering to?</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+            </li>
+            <li><span class="task-text"><strong>Design Philosophy</strong>: Written in the Hidden page</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Philosophy of logo</strong>: Documented reasoning behind logo design</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            
+            <li><span class="task-text"><strong>Survey</strong>: Survey for design</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+    </div>
+
+    <div class="column">
+        <h2>🎨 Design & User Experience</h2>
+        <ul>
+            <li><span class="task-text"><strong>Consistent Design</strong>: Uniform look & documented method</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Mobile Responsive</strong>: Works on phones & tablets</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Favicon</strong>: Add favicon</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Icons on Links</strong>: Icon for every navigation/action link</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+
+        <h2>♿ Accessibility & Performance</h2>
+        <ul>
+            <li><span class="task-text"><strong>Accessibility</strong>: Screen-readable & accessible</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Performance</strong>: Optimized for fast rendering</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Images</strong>: Optimized image on every page</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Image Optimization</strong>: Documented</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Figure Labelling</strong>: "Lower is better" / "Higher is better"</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+
+        <h2>🔍 SEO & Marketing</h2>
+        <ul>
+            <li><span class="task-text"><strong>SEO Keywords</strong>: Selected with reasoning</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>SEO Ranking Check</strong>: Recorded</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Sitemap</strong>: HTML or XML created</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Social Buttons</strong>: Implemented</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+
+        
+        </ul>
+        <h2>🚀 Hosting & Deployment</h2>
+        <ul>
+            <li><span class="task-text"><strong>Public Availability</strong>: Site & code publicly accessible</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Public URL</strong>: For robots.txt provided</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>Ngrok Hosting</strong>: Temporary testing via ngrok</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                        <option value="attached">Attached</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+        <h2>🎯 Special Features</h2>
+        <ul>
+            <li><span class="task-text"><strong>Google Map</strong>: On "About Us" page</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+            <li><span class="task-text"><strong>LinkedIn Profile Link</strong>: Optional</span>
+                <div class="status-dropdown">
+                    <select>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
+                        <option value="to-be-done">To be done</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+
+        
+    </div>
+</div>
+
   </main>
 
   <footer class="bg-light border-top py-4">
@@ -233,8 +706,7 @@
 
     const statsList = {
       totalListings: document.getElementById('totalListings'),
-      totalUsers: document.getElementById('totalUsers'),
-      activeToday: document.getElementById('activeToday')
+      totalUsers: document.getElementById('totalUsers')
     };
     const grid = document.getElementById('itemsGrid');
 
@@ -248,7 +720,6 @@
         console.error(err);
         statsList.totalListings.textContent = 'Error';
         statsList.totalUsers.textContent = 'Error';
-        statsList.activeToday.textContent = 'Error';
       }
     }
 
