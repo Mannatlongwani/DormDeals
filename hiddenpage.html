@@ -72,6 +72,47 @@
         outline: 2px solid #007acc;
         border-color: #007acc;
     }
+    .team-table {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        overflow: hidden;
+        margin: 20px 0;
+    }
+    .team-table table {
+        margin-bottom: 0;
+    }
+    .team-table th {
+        background-color: #1a5276;
+        color: white;
+        font-weight: 600;
+        border: none;
+        padding: 12px;
+    }
+    .team-table td {
+        padding: 12px;
+        border-color: #dee2e6;
+        vertical-align: middle;
+    }
+    .team-table tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+    .role-badge {
+        background-color: #e3f2fd;
+        color: #1565c0;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.85em;
+        font-weight: 500;
+    }
+    .email-link {
+        color: #1a5276;
+        text-decoration: none;
+    }
+    .email-link:hover {
+        color: #0d47a1;
+        text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -160,13 +201,6 @@
     <li><strong>Price Display:</strong> Prices are displayed in a distinct line with a currency symbol, giving them high salience so users can evaluate affordability at a glance.</li>
     <li><strong>Call-to-Action ("View Details"):</strong> The button is large, bright blue, and placed at the bottom of each card to naturally follow the user's reading and evaluation flow. This ordering aligns with decision-making psychology — first see the product, then understand it, and finally take action.</li>
   </ul>
-  
-  <h5>6. Visual Hierarchy</h5>
-  <p>The visual weight is distributed so that users naturally scan from the top search bar to the first product card and then continue across and down. The white background provides high contrast against images, making colors in the listings pop and drawing attention where it matters most. This also avoids any background distractions, keeping focus on the products.</p>
-  
-  <h5>7. Accessibility Considerations</h5>
-  <p>Product titles and prices are in high-contrast text for readability. Interactive elements such as the search button and "View Details" buttons are large enough to be comfortably clicked on smaller screens. Image dimensions are consistent, aiding users with cognitive processing differences by avoiding irregular visual patterns that could cause distraction.</p>
-
   <hr>
   
   <h2>Sell / Donate Page</h2>
@@ -364,6 +398,89 @@
         </li>
       </ol>
     </div>
+
+    <!-- NEW: Team Members Table -->
+    <div class="mb-5">
+      <h2><i class="bi bi-people-fill text-primary"></i> Team Members</h2>
+      <div class="team-table">
+        <table class="table table-hover mb-0">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Roll No.</th>
+              <th scope="col">Email ID</th>
+              <th scope="col">Role & Responsibilities</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Aditya Kumar</strong></td>
+              <td>IPM05004</td>
+              <td><a href="mailto:ipm05adityak@iimrohtak.ac.in" class="email-link">ipm05adityak@iimrohtak.ac.in</a></td>
+              <td>
+                <span class="role-badge">Frontend Developer</span><br>
+                <small class="text-muted">Homepage, About Us, Responsive Design</small>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Ashmeet Singh Chauhan</strong></td>
+              <td>IPM05016</td>
+              <td><a href="mailto:ipm05ashmeets@iimrohtak.ac.in" class="email-link">ipm05ashmeets@iimrohtak.ac.in</a></td>
+              <td>
+                <span class="role-badge">Backend Developer</span><br>
+                <small class="text-muted">Accessibility</small>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Anant Mishra</strong></td>
+              <td>IPM05153</td>
+              <td><a href="mailto:ipm05anantm@iimrohtak.ac.in" class="email-link">ipm05anantm@iimrohtak.ac.in</a></td>
+              <td>
+                <span class="role-badge">Backend Developer</span><br>
+                <small class="text-muted">Backend Integration, Homepage</small>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Mannat Longwani</strong></td>
+              <td>IPM05183</td>
+              <td><a href="mailto:ipm05mannatl@iimrohtak.ac.in" class="email-link">ipm05mannatl@iimrohtak.ac.in</a></td>
+              <td>
+                <span class="role-badge">Project Manager</span><br>
+                <small class="text-muted">Header and Footer, Stakeholder Analysis, About Us</small>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Prishita Sachin Vajar</strong></td>
+              <td>IPM05185</td>
+              <td><a href="mailto:ipm05prishitasv@iimrohtak.ac.in" class="email-link">ipm05prishitasv@iimrohtak.ac.in</a></td>
+              <td>
+                <span class="role-badge">Content Writer</span><br>
+                <small class="text-muted">Grievance Redressal, Hidden Page, Security.txt</small>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Bhukya Karthik</strong></td>
+              <td>IPM05019</td>
+              <td><a href="mailto:ipm05bhukyak@iimrohtak.ac.in" class="email-link">ipm05bhukyak@iimrohtak.ac.in</a></td>
+              <td>
+                <span class="role-badge">Tester</span><br>
+                <small class="text-muted">Contact Repository, Logo Design, Homepage, HTTPS Integration</small>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Golla Shivani</strong></td>
+              <td>IPM05148</td>
+              <td><a href="mailto:ipm05gollas@iimrohtak.ac.in" class="email-link">ipm05gollas@iimrohtak.ac.in</a></td>
+              <td>
+                <span class="role-badge">Developer</span><br>
+                <small class="text-muted">Back-end Integration, Favicon, HTTPS Integration</small>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
  <div class="alert alert-warning">
       <i class="bi bi-exclamation-triangle"></i> This page is not linked from anywhere on the site.
       Only instructors with the direct link should be able to access it.
@@ -382,58 +499,7 @@
         <!-- JS injects cards here -->
       </div>
     </section>
-
-    <div class="mb-5">
-      <h2>Team Members</h2>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Roll Number</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Aditya Kumar</td>
-            <td>IPM05004</td>
-            <td>ipm05adityak@iimrohtak.ac.in</td>
-          </tr>
-          <tr>
-            <td>Ashmeet Singh Chauhan</td>
-            <td>IPM05016</td>
-            <td>ipm05ashmeets@iimrohtak.ac.in</td>
-          </tr>
-          <tr>
-            <td>Anant Mishra</td>
-            <td>IPM05153</td>
-            <td>ipm05anantm@iimrohtak.ac.in</td>
-          </tr>
-          <tr>
-            <td>Mannat Longwani</td>
-            <td>IPM05183</td>
-            <td>ipm05mannatl@iimrohtak.ac.in</td>
-          </tr>
-          <tr>
-            <td>Prishita Sachin Vajar</td>
-            <td>IPM05185</td>
-            <td>ipm05prishitasv@iimrohtak.ac.in</td>
-          </tr>
-          <tr>
-            <td>Bhukya Karthik</td>
-            <td>IPM05019</td>
-            <td>ipm05bhukyak@iimrohtak.ac.in</td>
-          </tr>
-          <tr>
-            <td>Golla Shivani</td>
-            <td>IPM05148</td>
-            <td>ipm05gollas@iimrohtak.ac.in</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h1>WBD Project Requirements</h1>
+ <h1>WBD Project Requirements</h1>
 
 <div class="container">
     <div class="column">
@@ -754,8 +820,8 @@
             <li><span class="task-text"><strong>SEO Ranking Check</strong>: Recorded</span>
                 <div class="status-dropdown">
                     <select>
-                        <option value="not-applicable">Not applicable</option>
-                        <option value="done"selected>Done</option>
+                        <option value="not-applicable" selected>Not applicable</option>
+                        <option value="done">Done</option>
                         <option value="to-be-done">To be done</option>
                         <option value="attached">Attached</option>
                     </select>
@@ -838,3 +904,7 @@
         </ul>
 
         
+
+
+
+ 
